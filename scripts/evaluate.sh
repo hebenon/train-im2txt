@@ -6,6 +6,9 @@ cd /models/im2txt
 # constrained, for example, by running the training script).
 export CUDA_VISIBLE_DEVICES=""
 
+# Build the model.
+bazel build -c opt im2txt/...
+
 # Run the evaluation script. This will run in a loop, periodically loading the
 # latest model checkpoint file and computing evaluation metrics.
 bazel-bin/im2txt/evaluate \
